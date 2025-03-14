@@ -1,0 +1,28 @@
+#+title: one-pass.el
+#+date: 03-13-2025
+#+author: anparisi
+
+* Why
+There are a few packages to interface emacs with the 1password CLI. Most of them do kind of the same thing. This package is like that. The difference is that in the short survey I did, nothing just returned a plist of the 1password item. This does that. So if you were looking for that and found this package, that's great.
+
+* Usage
+
+** Public Functions
+- =one-pass/get-item=. This function takes a 1password item ID and returns a plist of the items fields.
+- =one-pass/list-items=. Returns a list of 1password item IDs.
+
+Both of these functions have interactive view interfaces too:
+- =one-pass/view-item=, which takes a 1password item ID and opens a buffer with the item fields.
+- =one-pass/list-items=, which takes a list of categories and tags and opens a buffer with the item IDs.
+
+* Example
+
+#+name: example.example
+#+begin_src emacs-lisp :results value raw :wrap src emacs-lisp
+(one-pass/get-item "local-postgres")
+#+end_src
+
+#+RESULTS: example.example
+#+begin_src emacs-lisp
+(:notesPlain nil :type postgresql :server localhost :port 5432 :database example-db :username postgres :password postgres :SID nil :alias nil :connection options nil)
+#+end_src
