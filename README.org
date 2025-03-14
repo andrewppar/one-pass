@@ -18,7 +18,7 @@ Both of these functions have interactive view interfaces too:
 * Example
 
 #+name: example.example
-#+begin_src emacs-lisp :results value raw :wrap src emacs-lisp
+#+begin_src emacs-lisp :results value raw :wrap src emacs-lisp :exports both
 (one-pass/get-item "local-postgres")
 #+end_src
 
